@@ -195,7 +195,7 @@ main section, aside section {
 }
 
 main section h2, aside section h2 {
-    font-size: 0.82rem
+    font-size: 0.82rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     font-family: var(--police-texte);
