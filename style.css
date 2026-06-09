@@ -1,0 +1,104 @@
+/* =====================================================
+   FICHIER : style.css
+   SPRINT : 03 - Programmation Web  / IMeN Bénin
+   AUTEUR : Emmanuel GBODOU 
+   ========================== ========================== */
+/* =====================================================
+   REINITIALISATION DU BOX MODEL
+   ========================== ========================== */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ======================================================
+   VARIABLES CSS
+   ======================================================*/
+:root{
+    --couleur-primaire: #1B3A5C;
+    --couleur-secondaire: #2A6496;
+    --couleur-fond-page: #F7F4EF;
+    --couleur-fond-blanc: #FFFFFF;
+    --couleur-texte: #444441;
+    --couleur-bordure: #D3D1C7;
+    --police-titres: 'Playfair Display' , Georgia, serif;
+    --police-texte: 'Source Sans 3' , Arial, sans-serif;
+}
+
+
+/* ======================================================
+   STYLES GLOBAUX DU BODY
+   ======================================================*/
+body {
+    font-family: var(--police-texte);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--couleur-texte);
+    background-color: var(--couleur-fond-page);
+}
+
+
+/* ======================================================
+   TYPOGRAPHIE : LES TITRES
+   ======================================================*/
+h1, h2, h3 {
+    font-family: var(--police-titres);
+    color: var(--couleur-primaire);
+}   
+
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1rem; }
+
+
+/* ======================================================
+   COULEURS DE FOND ET BORDURES PAR ZONE
+   ======================================================*/
+header {
+    background-color: var(--couleur-fond-blanc);
+    border-top: 5px solid var(--couleur-primaire);
+    padding: 1rem;
+}
+
+main {
+    background-color: var(--couleur-fond-blanc);
+    border: 1px solid var(--couleur-bordure);
+    padding: 1rem;
+}
+
+main section {
+    border-bottom: 1px solid var(--couleur-bordure);
+    padding: 1rem 0;
+}
+
+main section:last-child {
+    border-bottom: none;
+}
+
+aside {
+    background-color: #EBF3FA;
+    border: 1px solid var(--couleur-bordure);
+    border-left: 4px solid var(--couleur-primaire);
+    padding: 1rem;
+}
+
+aside section {
+    border-bottom: 1px solid var(--couleur-bordure);
+    padding: 0.75rem 0;
+}
+
+aside section:last-child {
+    border-bottom: none;
+}
+
+footer {
+    background-color: var(--couelur-fond-blanc);
+    border-top: 3px solid var(--couleur-primaire);
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888780;
+}
