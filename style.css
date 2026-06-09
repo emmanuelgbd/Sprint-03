@@ -21,10 +21,21 @@
     --couleur-secondaire: #2A6496;
     --couleur-fond-page: #F7F4EF;
     --couleur-fond-blanc: #FFFFFF;
+    --couleur-fond-aside: #EBF3FA;
     --couleur-texte: #444441;
+    --couleur-texte-fort: #2C2C2A;
     --couleur-bordure: #D3D1C7;
+
     --police-titres: 'Playfair Display' , Georgia, serif;
     --police-texte: 'Source Sans 3' , Arial, sans-serif;
+
+    --espace-xs: 0.25rem;
+    --espace-sm: 0.5rem;
+    --espace-md: 1rem;
+    --espace-lg: 1.5rem;
+    --espace-xl: 2rem;
+
+    --largeur-max: 960px;
 }
 
 
@@ -37,6 +48,15 @@ body {
     line-height: 1.6;
     color: var(--couleur-texte);
     background-color: var(--couleur-fond-page);
+
+    max-width: var(--largeur-max);
+    margin-top: var(--espace-xl);
+    margin-bottom: var(--espace-xl);
+    margin-right: auto;
+    margin-left: auto;
+
+    padding-left: var(--espace-md);
+    padding-right: var(--espace-md);
 }
 
 
@@ -46,59 +66,419 @@ body {
 h1, h2, h3 {
     font-family: var(--police-titres);
     color: var(--couleur-primaire);
+    line-height: 1.3;
 }   
 
 
 h1 { font-size: 2rem; }
-h2 { font-size: 1.3rem; }
-h3 { font-size: 1rem; }
+h2 { font-size: 1.3rem; margin-bottom: var(--espace-md); }
+
+h3 { 
+    font-family: var(--police-texte);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--couleur-texte-fort);
+}
+
+p {
+    margin-bottom: var(--espace-sm);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
 
 
 /* ======================================================
-   COULEURS DE FOND ET BORDURES PAR ZONE
+   MISE EN PAGE : FLOAT
    ======================================================*/
-header {
-    background-color: var(--couleur-fond-blanc);
-    border-top: 5px solid var(--couleur-primaire);
-    padding: 1rem;
-}
-
 main {
-    background-color: var(--couleur-fond-blanc);
-    border: 1px solid var(--couleur-bordure);
-    padding: 1rem;
-}
-
-main section {
-    border-bottom: 1px solid var(--couleur-bordure);
-    padding: 1rem 0;
-}
-
-main section:last-child {
-    border-bottom: none;
+    float: left;
+    width: 62%;
+    padding-right: var(--espace-lg);
 }
 
 aside {
-    background-color: #EBF3FA;
-    border: 1px solid var(--couleur-bordure);
-    border-left: 4px solid var(--couleur-primaire);
-    padding: 1rem;
-}
-
-aside section {
-    border-bottom: 1px solid var(--couleur-bordure);
-    padding: 0.75rem 0;
-}
-
-aside section:last-child {
-    border-bottom: none;
+    float: right;
+    width: 35%;
 }
 
 footer {
-    background-color: var(--couelur-fond-blanc);
-    border-top: 3px solid var(--couleur-primaire);
-    padding: 1rem;
+    clear: both;
+}
+
+
+/* =======================================================
+   EN-TÊTE (header)
+   ======================================================*/
+header {
+    background-color: var(--couleur-fond-blanc);
+    padding: var(--espace-xl);
+    margin-bottom: var(--espace-md);
+    border-radius: 8px;
+    border-top: 5px solid var(--couleur-primaire);
+    box-shadow: 0 2px 8px rgba(27, 58, 92, 0.08);
     text-align: center;
+}
+
+header figure {
+    margin-bottom: var(--espace-md);
+}
+
+header img {
+    width: 120PX;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--couleur-primaire);
+    object-fit: cover;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: var(--espace-xs);
+}
+
+header > p:first-of-type {
+    color: var(--couleur-secondaire);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: var(--espace-sm);
+}
+
+header > p:nth-of-type(2) {
+    font-size: 0.88rem;
+    color: var(--couleur-texte);
+    margin-bottom: var(--espace-md);
+}
+
+header address {
+    font-style: normal;
+    display: inline-block;
+    text-align: left;
+    background-color: #EBF3FA;
+    padding: var(--espace-sm) var(--espace-md);
+    border-radius: 6px;
+    border-left: 3px solid var(--couleur-secondaire);
+    font-size: 0.88rem;
+}
+
+header address p {
+    margin-bottom: var(--espace-xs);
+}
+
+header address p:last-child {
+    margin-bottom: 0;
+}
+
+header address a {
+    display: inline-block;
+    background-color: var(--couleur-primaire);
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+
+/* =======================================================
+   SECTIONS COMMUNES (main et aside)
+   ======================================================*/
+main section, aside section {
+    background-color: var(--couleur-fond-blanc);
+    border-radius: 8px;
+    padding: var(--espace-lg);
+    margin-bottom: var(--espace-md);
+    border: 1px solid var(--couleur-bordure);
+}
+
+main section h2, aside section h2 {
+    font-size: 0.82rem
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-family: var(--police-texte);
+    font-weight: 700;
+    padding-bottom: var(--espace-sm);
+    margin-bottom: var(--espace-md);
+    border-bottom: 2px solid var(--couleur-primaire);
+}
+
+
+/* =======================================================
+   SECTION EXPERIENCES
+   =======================================================*/
+#experiences article {
+    padding: var(--espace-md);
+    background-color: var(--couleur-fond-page);
+    border-radius: 6px;
+    border-left: 3px solid var(--couleur-secondaire);
+    margin-bottom: var(--espace-md);
+}
+
+#experiences article:last-child {
+    margin-bottom: 0;
+}
+
+#experiences article h3 {
+    margin-bottom: var(--espace-xs);
+}
+
+#experiences article p strong {
+    color: var(--couleur-primaire);
+}
+
+#experiences article p:nth-of-type(2) {
+    font-size: 0.82rem;
+    color: var(--couleur-secondaire);
+    font-style: italic;
+    margin-bottom: var(--espace-sm);
+}
+
+#experiences article ul {
+    padding-left: var(--espace-md);
+}
+
+#experiences article li {
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+#experiences article li::marker {
+    color: var(--couleur-secondaire);
+}
+
+
+/* =======================================================
+   SECTION FORMATIONS
+   ======================================================= */
+#formation ol {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: formation-counter;
+}
+
+#formation li {
+    counter-increment: formation-counter;
+    position: relative;
+    padding-top: var(--espace-sm);
+    padding-right: var(--espace-sm);
+    padding-bottom: var(--espace-sm);
+    padding-left: 3rem;
+    margin-bottom: var(--espace-sm);
+    border-bottom: 1px solid var(--couleur-bordure);
+}
+
+#formation li:last-child {
+    border-bottom: none;
+}
+
+#formation li::before {
+    content: counter(formation-counter);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    background-color: var(--couleur-primaire);
+    color: #FFFFFF;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: var(--police-texte);
+    text-align: center;
+    line-height: 26px;
+}
+
+#formation li h3 {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+#formation li p {
+    font-size: 0.82rem;
+}
+
+
+/* =======================================================
+   ASIDE (SIDEBAR)
+   ======================================================= */
+#profil {
+    background-color: var(--couleur-primaire) !important;
+    border: none !important;
+}
+
+#profil h2 {
+    color: #FFFFFF !important;
+    border-bottom-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+#profil p {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.88rem;
+}
+
+#profil blockquote {
+    margin-top: var(--espace-md);
+    padding: var(--espace-sm) var(--espace-md);
+    border-left: 3px solid rgba(255, 255, 255, 0.4);
+    font-style: italic;
+}
+
+#profil blockquote p {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.85rem;
+}
+
+#competences {
+    background-color: var(--couleur-fond-aside) !important;
+}
+
+#langues dl {
+    font-size: 0.88rem;
+}
+
+#langues dt {
+    font-weight: 600;
+    color: var(--couleur-texte-fort);
+    margin-top: var(--espace-sm);
+}
+
+#langues dd {
+    margin-left: var(--espace-md);
+    color: var(--couleur-texte);
+}
+
+#logiciels ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#logiciels li {
+    font-size: 0.88rem;
+    padding: var(--espace-xs) 0 var(--espace-md);
+    border-bottom: 1px solid var(--couleur-bordure);
+    position: relative;
+}
+
+#logiciels li::before {
+    content: "‣";
+    position: absolute;
+    left: 0;
+    color: var(--couleur-secondaire);
+}
+
+#logiciels li:last-child {
+    border-bottom: none;
+}
+
+#qualites ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espace-xs);
+}
+
+#qualities li {
+    background-color: var(--couleur-primaire);
+    color: #FFFFFF;
+    font-size: 0.78rem;
+    padding: var(--espace-xs) var(--espace-sm);
+    border-radius: 20px;
+    margin-bottom: 0;
+}
+
+#centre-interet ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espace-xs);
+}
+
+#centre-interet li {
+    background-color: #EBF3FA;
+    color: var(--couleur-secondaire);
+    font-size: 0.78rem;
+    padding: var(--espace-xs) var(--espace-sm);
+    border-radius: 20px;
+    border: 1px solid var(--couleur-secondaire);
+    margin-bottom: 0;
+}
+
+#reseaux ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#reseaux li {
+    border-bottom: 1px solid var(--couleur-bordure);
+    margin-bottom: 0;
+}
+
+#reseaux li:last-child {
+    border-bottom: none;
+}
+
+#reseaux a {
+    display: block;
+    padding: var(--espace-sm) 0;
+    padding-left: var(--espace-md);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--couleur-secondaire);
+    text-decoration: none;
+    position: relative;
+}
+
+#reseaux a::before {
+    content: "‣";
+    position: absolute;
+    left: 0;
+    color: var(--couleur-secondaire);
+}
+
+#permis p {
+    font-size: 0.88rem;
+    background-color: var(--couleur-fond-page);
+    padding: var(--espace-xs) var(--espace-sm);
+    border-radius: 4px;
+    display: inline-block;
+}
+
+
+/* =======================================================
+   LIENS GENERAUX
+   =======================================================*/
+a {
+    color: var(--couleur-secondaire);
+    text-decoration: none;
+}
+
+
+/* =======================================================
+   PIED DE PAGE
+   =======================================================*/
+footer {
+    clear: both;
+    text-align: center;
+    padding: var(--espace-md);
+    margin-top: var(--espace-md);
+    background-color: var(--couleur-fond-blanc);
+    border-top: 3px solid var(--couleur-primaire);
+    border-radius: 8px;
     font-size: 0.8rem;
     color: #888780;
 }
+
+footer strong {
+    color: var(--couleur-primaire);
+}
+
+
+/* ====================================================
+   FIN DU FICHIER- style.css
+   ====================================================*/
