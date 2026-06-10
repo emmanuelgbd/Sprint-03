@@ -1,13 +1,13 @@
 # Sprint-03 - Guide Complet du Fichier CSS
 
-## 📄 Projet
+##  Projet
 Ce projet consiste à styliser un CV créé en HTML5 sémantique avec du CSS professionnel et bien documenté.
 
 ---
 
-## 🎨 Explication Complète du Fichier `style.css`
+## Explication Complète du Fichier `style.css`
 
-### **1️⃣ EN-TÊTE DU FICHIER (Commentaires)**
+### **1️ EN-TÊTE DU FICHIER (Commentaires)**
 
 ```css
 /* =====================================================
@@ -20,7 +20,7 @@ Ce projet consiste à styliser un CV créé en HTML5 sémantique avec du CSS pro
 
 ---
 
-### **2️⃣ RÉINITIALISATION DU BOX MODEL**
+### **2️ RÉINITIALISATION DU BOX MODEL**
 
 ```css
 *{
@@ -40,7 +40,7 @@ Ce projet consiste à styliser un CV créé en HTML5 sémantique avec du CSS pro
 
 ---
 
-### **3️⃣ VARIABLES CSS (Personnalisation Globale)**
+### **3️ VARIABLES CSS (Personnalisation Globale)**
 
 ```css
 :root{
@@ -91,7 +91,7 @@ Ce projet consiste à styliser un CV créé en HTML5 sémantique avec du CSS pro
 
 ---
 
-### **4️⃣ BODY - LE CORPS DE LA PAGE**
+### **4️ BODY - LE CORPS DE LA PAGE**
 
 ```css
 body {
@@ -139,7 +139,7 @@ body {
 
 ---
 
-### **5️⃣ LES PARAGRAPHES**
+### **5️ LES PARAGRAPHES**
 
 ```css
 p {
@@ -159,7 +159,7 @@ p:last-child {
 
 ---
 
-### **6️⃣ LES TITRES (h1, h2, h3)**
+### **6️ LES TITRES (h1, h2, h3)**
 
 ```css
 h1, h2, h3 {
@@ -199,7 +199,7 @@ h3 {
 
 ---
 
-### **7️⃣ MISE EN PAGE : FLOAT (Disposition à Deux Colonnes)**
+### **7️ MISE EN PAGE : FLOAT (Disposition à Deux Colonnes)**
 
 ```css
 main {
@@ -234,7 +234,7 @@ footer {
 
 ---
 
-### **8️⃣ EN-TÊTE (header)**
+### **8️ EN-TÊTE (header)**
 
 ```css
 header {
@@ -273,7 +273,7 @@ header img {
 
 ---
 
-### **9️⃣ LIENS DANS LE HEADER**
+### **9️ LIENS DANS LE HEADER**
 
 ```css
 header address a {
@@ -315,7 +315,7 @@ header address a:active {
 
 ---
 
-### **🔟 SECTIONS PRINCIPALES (main et aside)**
+### **10 SECTIONS PRINCIPALES (main et aside)**
 
 ```css
 main section, aside section {
@@ -351,7 +351,7 @@ main section h2, aside section h2 {
 
 ---
 
-### **1️⃣1️⃣ SECTION EXPÉRIENCES**
+### **1️1️ SECTION EXPÉRIENCES**
 
 ```css
 #experiences article {
@@ -377,7 +377,7 @@ main section h2, aside section h2 {
 
 ---
 
-### **1️⃣2️⃣ SECTION FORMATIONS (Avec Compteur)**
+### **1️2️ SECTION FORMATIONS (Avec Compteur)**
 
 ```css
 #formation ol {
@@ -418,7 +418,7 @@ main section h2, aside section h2 {
 
 ---
 
-### **1️⃣3️⃣ ASIDE (BARRE LATÉRALE)**
+### **1️3️ ASIDE (BARRE LATÉRALE)**
 
 ```css
 #profil {
@@ -446,7 +446,7 @@ main section h2, aside section h2 {
 
 ---
 
-### **1️⃣4️⃣ COMPÉTENCES ET LANGUES**
+### **1️4️ COMPÉTENCES ET LANGUES**
 
 ```css
 #langues dl {
@@ -472,7 +472,7 @@ main section h2, aside section h2 {
 
 ---
 
-### **1️⃣5️⃣ LOGICIELS (Avec Puces Personnalisées)**
+### **1️5️ LOGICIELS (Avec Puces Personnalisées)**
 
 ```css
 #logiciels li::before {
@@ -491,7 +491,7 @@ main section h2, aside section h2 {
 ### **1️⃣6️⃣ QUALITÉS (Badges)**
 
 ```css
-#qualities li {
+#qualites li {
     background-color: var(--couleur-primaire);
     color: #FFFFFF;
     font-size: 0.78rem;
@@ -501,7 +501,7 @@ main section h2, aside section h2 {
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-#qualities li:hover {
+#qualites li:hover {
     background-color: var(--couleur-secondaire);
     transform: translateY(-1px);
 }
@@ -513,7 +513,7 @@ main section h2, aside section h2 {
 
 ---
 
-### **1️⃣7️⃣ RÉSEAUX SOCIAUX**
+### **1️7️ RÉSEAUX SOCIAUX**
 
 ```css
 #reseaux a {
@@ -546,7 +546,7 @@ main section h2, aside section h2 {
 
 ---
 
-### **1️⃣8️⃣ PIED DE PAGE (footer)**
+### **1️8️ PIED DE PAGE (footer)**
 
 ```css
 footer {
@@ -568,7 +568,7 @@ footer {
 
 ---
 
-## 📚 Résumé des Concepts Clés
+##  Résumé des Concepts Clés
 
 | Concept | Signification | Exemple |
 |---------|---------------|---------|
@@ -584,7 +584,7 @@ footer {
 
 ---
 
-## 🎯 Comment Modifier le CSS
+##  Comment Modifier le CSS
 
 1. **Changer les couleurs** : Modifiez les valeurs hexadécimales en haut du fichier (`:root`)
 2. **Changer les espacements** : Modifiez les variables `--espace-*`
@@ -592,5 +592,3 @@ footer {
 4. **Ajouter une section** : Duplicez un bloc de code et adaptez l'ID
 
 ---
-
-**Créé pour le Sprint 03 - IMeN Bénin** 💡
