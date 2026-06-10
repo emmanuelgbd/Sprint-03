@@ -405,7 +405,7 @@ main section h2, aside section h2 {
     gap: var(--espace-xs);
 }
 
-#qualities li {
+#qualites li {
     background-color: var(--couleur-primaire);
     color: #FFFFFF;
     font-size: 0.78rem;
@@ -416,7 +416,7 @@ main section h2, aside section h2 {
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-#qualities li:hover {
+#qualites li:hover {
     background-color: var(--couleur-secondaire);
     transform: translateY(-1px);
 }
