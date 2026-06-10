@@ -17,6 +17,7 @@
    VARIABLES CSS
    ======================================================*/
 :root{
+    /* Couleurs */
     --couleur-primaire: #1B3A5C;
     --couleur-secondaire: #2A6496;
     --couleur-fond-page: #F7F4EF;
@@ -26,9 +27,11 @@
     --couleur-texte-fort: #2C2C2A;
     --couleur-bordure: #D3D1C7;
 
+    /* Polices */
     --police-titres: 'Playfair Display' , Georgia, serif;
     --police-texte: 'Source Sans 3' , Arial, sans-serif;
 
+    /*Espacements en rem (relatifs à la taille de police racine) */
     --espace-xs: 0.25rem;
     --espace-sm: 0.5rem;
     --espace-md: 1rem;
@@ -40,7 +43,7 @@
 
 
 /* ======================================================
-   STYLES GLOBAUX DU BODY
+    BODY & TYPOGRAPHIE GLOBALE
    ======================================================*/
 body {
     font-family: var(--police-texte);
@@ -48,20 +51,26 @@ body {
     line-height: 1.6;
     color: var(--couleur-texte);
     background-color: var(--couleur-fond-page);
-
     max-width: var(--largeur-max);
     margin-top: var(--espace-xl);
     margin-bottom: var(--espace-xl);
     margin-right: auto;
     margin-left: auto;
-
     padding-left: var(--espace-md);
     padding-right: var(--espace-md);
 }
 
+p {
+    margin-bottom: var(--espace-sm);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
 
 /* ======================================================
-   TYPOGRAPHIE : LES TITRES
+    LES TITRES
    ======================================================*/
 h1, h2, h3 {
     font-family: var(--police-titres);
@@ -80,17 +89,9 @@ h3 {
     color: var(--couleur-texte-fort);
 }
 
-p {
-    margin-bottom: var(--espace-sm);
-}
-
-p:last-child {
-    margin-bottom: 0;
-}
-
 
 /* ======================================================
-   MISE EN PAGE : FLOAT
+    MISE EN PAGE : FLOAT
    ======================================================*/
 main {
     float: left;
@@ -109,7 +110,7 @@ footer {
 
 
 /* =======================================================
-   EN-TÊTE (header)
+    EN-TÊTE (header)
    ======================================================*/
 header {
     background-color: var(--couleur-fond-blanc);
@@ -136,12 +137,13 @@ header img {
 header h1 {
     font-size: 2.2rem;
     margin-bottom: var(--espace-xs);
+    letter-spacing: 0.02em;
 }
 
 header > p:first-of-type {
     color: var(--couleur-secondaire);
     font-weight: 600;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: var(--espace-sm);
 }
@@ -156,7 +158,7 @@ header address {
     font-style: normal;
     display: inline-block;
     text-align: left;
-    background-color: #EBF3FA;
+    background-color: var(--couleur-fond-aside);
     padding: var(--espace-sm) var(--espace-md);
     border-radius: 6px;
     border-left: 3px solid var(--couleur-secondaire);
@@ -171,6 +173,10 @@ header address p:last-child {
     margin-bottom: 0;
 }
 
+
+/* =========================================================
+    LIENS DU HEADER - BOUTONS + ETATS :hover/:focus/:active
+   =========================================================*/
 header address a {
     display: inline-block;
     background-color: var(--couleur-primaire);
@@ -180,6 +186,21 @@ header address a {
     font-weight: 600;
     font-size: 0.85rem;
     text-decoration: none;
+
+    transition: backgrond-color 0.2s ease, transform 0.1s ease;
+}
+
+header address a:hover {
+    background-color: var(--couleur-secondaire);
+}
+
+header address a:focus {
+    outline: 2px solid var(--couleur-secondaire);
+    outline-offset: 2px;
+}
+
+header address a:active {
+    transform: scale(0.96);
 }
 
 
@@ -192,6 +213,7 @@ main section, aside section {
     padding: var(--espace-lg);
     margin-bottom: var(--espace-md);
     border: 1px solid var(--couleur-bordure);
+    box-shadow: 0 1px 4px rgba(27, 58, 92, 0.05);
 }
 
 main section h2, aside section h2 {
@@ -330,6 +352,7 @@ main section h2, aside section h2 {
 #profil blockquote p {
     color: rgba(255, 255, 255, 0.72);
     font-size: 0.85rem;
+    margin-bottom: 0
 }
 
 #competences {
@@ -358,7 +381,7 @@ main section h2, aside section h2 {
 
 #logiciels li {
     font-size: 0.88rem;
-    padding: var(--espace-xs) 0 var(--espace-md);
+    padding: var(--espace-xs) 0 var(--espace-xs) var(--espace-md);
     border-bottom: 1px solid var(--couleur-bordure);
     position: relative;
 }
@@ -374,7 +397,7 @@ main section h2, aside section h2 {
     border-bottom: none;
 }
 
-#qualites ul {
+#qualites ul, #centre-interet ul {
     list-style: none;
     padding-left: 0;
     display: flex;
@@ -389,24 +412,29 @@ main section h2, aside section h2 {
     padding: var(--espace-xs) var(--espace-sm);
     border-radius: 20px;
     margin-bottom: 0;
+    
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-#centre-interet ul {
-    list-style: none;
-    padding-left: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espace-xs);
+#qualities li:hover {
+    background-color: var(--couleur-secondaire);
+    transform: translateY(-1px);
 }
 
 #centre-interet li {
-    background-color: #EBF3FA;
+    background-color: var(--couleur-fond-aside);
     color: var(--couleur-secondaire);
     font-size: 0.78rem;
     padding: var(--espace-xs) var(--espace-sm);
     border-radius: 20px;
     border: 1px solid var(--couleur-secondaire);
     margin-bottom: 0;
+    transition: background-color 0.2S ease, color 0.2s;
+}
+
+#centre-interet li:hover {
+    background-color: var(--couleur-secondaire);
+    color: #FFFFFF;
 }
 
 #reseaux ul {
@@ -432,6 +460,8 @@ main section h2, aside section h2 {
     color: var(--couleur-secondaire);
     text-decoration: none;
     position: relative;
+
+    transition: padding-left 0.2s ease, color 0.2s ease;
 }
 
 #reseaux a::before {
@@ -439,6 +469,22 @@ main section h2, aside section h2 {
     position: absolute;
     left: 0;
     color: var(--couleur-secondaire);
+    transition: color 0.2s ease;
+}
+
+#reseaux a:hover {
+    color: var(--couleur-primaire);
+    padding-left: 1.4rem;
+}
+
+#reseaux a:hover::before {
+    color: var(--couleur-primaire);
+}
+
+#reseaux a:focus {
+    outline: 2px solid var(--couleur-secondaire);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 #permis p {
@@ -456,6 +502,18 @@ main section h2, aside section h2 {
 a {
     color: var(--couleur-secondaire);
     text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--couleur-primaire);
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: 2px solid var(--couleur-secondaire);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 
